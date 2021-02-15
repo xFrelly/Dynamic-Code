@@ -75,6 +75,7 @@ client.on('message' , message => {
 client.elevation = message => {
   if(!message.guild) return;
   let permlvl = 0;
+  if(message.member.hasPermission('MANAGE_ROLES')) permlvl = 1;
   if(message.member.hasPermission('BAN_MEMBERS')) permlvl = 2;
   if(message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
   if(message.member.hasPermission('MANAGE_NICKNAMES')) permlvl = 4;
