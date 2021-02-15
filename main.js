@@ -86,7 +86,7 @@ client.elevation = message => {
 client.on('guildMemberAdd', async (member) => {
   if(db.has(`${member.guild.id}_otorol`)) {
     var role = db.fetch(`${member.guild.id}_otorol`)
-    member.addRole(role)
+    member.roles.add(role)
   } else {
     return;
   }
